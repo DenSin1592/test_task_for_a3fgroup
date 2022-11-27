@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\TagsParser;
+namespace App\Services\TagsParser\Parsers;
 
 interface TagsParserInterface
 {
