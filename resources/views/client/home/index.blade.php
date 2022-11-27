@@ -20,32 +20,42 @@
             }
         </style>
     </head>
-    <body>
+    <body class="bg-gray-100 dark:bg-gray-900">
 
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+    <div class="relative flex items-top justify-center  bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+        <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
 
-                    <form method="GET" id="url-parse-form" action="{{route('api.v1.parse')}}">
-                        <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">URL</label>
-                            <input type="url" class="form-control" name="url" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
+            <form method="GET" id="url-parse-form" action="{{route('api.v1.parse')}}">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">URL</label>
+                    <input type="url"
+                           class="form-control"
+                           name="{{\App\Http\Requests\Api\ParseRequest::URL_FIELD_NAME}}"
+                           placeholder="http://www.example.com"
+                           required
+                    >
                 </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
 
+
+            <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
+                <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
+                    Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                </div>
             </div>
+
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-        <script src="{{asset('/js/client/url_parse_form.js')}}"></script>
+    </div>
+    <hr>
+    <div class="container" id="table-wrapper">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="{{asset('/js/client/url_parse_form.js')}}"></script>
 
     </body>
 </html>
