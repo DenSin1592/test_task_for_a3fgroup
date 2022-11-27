@@ -1,5 +1,3 @@
-Проект работает на 1025 порту
-
 Для запуска выполнить
 docker-compose up
 
@@ -7,6 +5,11 @@ docker-compose up
 docker exec -it php bash
 composer install
 
+Проект работает на 1025 порту
+
+Также предусмотренна работа через консоль
+docker exec -it php bash
+php artisan app:get-count-tags-for-url {url:https://www.google.com}
 
 Тестовое задание A3F Group:
 PHP-fullstack разработчик
