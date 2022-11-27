@@ -13,12 +13,12 @@ class BaseDataProvider implements DataProviderInterface
     }
 
 
-    public function provideData(array $inputData): array
+    public function provideData(): array
     {
         $data = [];
 
         foreach ($this->child as $subForm) {
-            $subFormData = $subForm->provideData($inputData);
+            $subFormData = $subForm->provideData();
             $data = [...$data,...$subFormData];
         }
 

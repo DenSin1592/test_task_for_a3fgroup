@@ -2,6 +2,7 @@
 
 namespace App\Services\Client\DataProviders\Realizations\SubDataProviders\TagsParser;
 
+use App\DTO\Api\ParseDTO;
 use App\Http\Requests\Api\ParseRequest;
 use App\Services\Client\DataProviders\SubDataProviderInterface;
 use App\Services\TagsParser\TagsParserInterface;
@@ -18,8 +19,9 @@ class TagsSubDataProvider implements SubDataProviderInterface
         $this->tagsParser = \App::make(TagsParserInterface::class);
     }
 
-    public function provideData(array $inputData): array
+    public function provideData(): array
     {
-        return [self::NAME => $this->tagsParser->parse($inputData[ParseRequest::URL_FIELD_NAME])];
+        $url = ParseDTO::getInstance()->getProperty(ParseRequest::URL_FIELD_NAME);
+        return [self::NAME => $this->tagsParser->parse($url)];
     }
 }

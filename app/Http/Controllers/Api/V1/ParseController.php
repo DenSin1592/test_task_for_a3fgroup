@@ -23,7 +23,7 @@ class ParseController
 
     public function parse(ParseRequest $request): JsonResponse
     {
-        $viewData = $this->dataProvider->provideData($request->validated());
+        $viewData = $this->dataProvider->provideData();
 
         return \Response::json($viewData, ResponseAlias::HTTP_OK);
     }

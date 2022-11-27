@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Api;
 
+use App\DTO\Api\ParseDTO;
 use Illuminate\Foundation\Http\FormRequest;
 
 
@@ -23,4 +24,11 @@ class ParseRequest extends FormRequest
 
         return $rules;
     }
+
+    public function passedValidation()
+    {
+        $urlField = self::URL_FIELD_NAME;
+        ParseDTO::getInstance()->setProperty(self::URL_FIELD_NAME, $this->$urlField);
+    }
+
 }
