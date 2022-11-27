@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Web\Client;
 
-use Illuminate\Routing\Controller as BaseController;
+use App\Http\Controllers\Web\AbstractWebController;
 
 
-abstract class AbstractClientController extends BaseController{}
+abstract class AbstractClientController extends AbstractWebController {}

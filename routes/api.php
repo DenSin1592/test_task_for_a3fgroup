@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::namespace('V1')->name('v1.')->prefix('v1')->group(static function () {
+
+    Route::get('parse', 'ParseController@parse')->name('parse');
+
 });
+
