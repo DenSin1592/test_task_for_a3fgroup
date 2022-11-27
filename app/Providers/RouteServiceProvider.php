@@ -19,6 +19,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     public const HOME = '/home';
 
+    private const NAMESPACE_WEB = 'App\\Http\\Controllers\\Web';
+
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
      *
@@ -34,6 +36,7 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/api.php'));
 
             Route::middleware('web')
+                ->namespace(self::NAMESPACE_WEB)
                 ->group(base_path('routes/web.php'));
         });
     }
