@@ -3,15 +3,14 @@
 namespace App\Services\Client\DataProviders\Realizations\SubDataProviders\TagsParser;
 
 use App\Services\Client\DataProviders\SubDataProviderInterface;
-use App\Services\TagsParser\TagsParserFacade;
 use App\Services\TagsParser\TagsParserFacadeInterface;
 
 
 class TagsSubDataProvider implements SubDataProviderInterface
 {
-    public const NAME = 'tags';
+    private const NAME = 'tags';
 
-    private TagsParserFacade $tagsParserFacade;
+    private TagsParserFacadeInterface $tagsParserFacade;
 
     public function __construct()
     {

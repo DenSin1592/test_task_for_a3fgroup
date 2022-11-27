@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const form = $('#url-parse-form');
-    const button = form.find('button')
+    const button = form.find('button');
     const tableWrapper = $('#table-wrapper');
 
     form.on('submit', (e) => {
